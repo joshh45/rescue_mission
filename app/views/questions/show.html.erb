@@ -6,5 +6,16 @@
 
 <p>  <%= @question.description %> </p>
 
+<h3> Answers: </h3>
+
+
+<ul>
+  <% @question.answers.each do |answer| %>
+  <li> <%= answer.answer_description%> </li>
+  <% end %>
+</ul>
+
+<%= render :partial => '/answers/answer_form', answer: @answer%>
+
 
 <%= link_to 'Back', root_path %>
